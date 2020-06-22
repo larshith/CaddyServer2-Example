@@ -21,7 +21,7 @@ domain-name:443 {
 
         encode gzip
         
-# WEB_ROOT AND OTEHR 'MATCH' DIRECTIVES.
+# WEB_ROOT AND OTHER 'MATCH' DIRECTIVES.
 
         root * /path/to/web_root
         file_server
