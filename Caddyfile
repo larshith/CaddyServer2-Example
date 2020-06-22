@@ -1,0 +1,35 @@
+domain-name:443 {
+
+# TLS PARAMETERS.
+        tls /path/to/cert_chain_file /path/to/private_key_file {
+        protocols tls1.2 tls1.3
+        curves secp384r1 secp521r1
+        }
+
+# RESPONSE HEADERS SECTION ; SOME SECURITY HEADERS WRITTEN.
+
+        header {
+                strict-transport-security "max-age=31536000"
+                x-xss-protection "1, mode=block"
+                x-frame-options "SAMEORIGIN"
+                x-content-type-options "nosniff"
+                cache-control "no-store"
+                -server
+        }
+
+# USING GZIP FOR COMPRESSION.
+
+        encode gzip
+        
+# WEB_ROOT AND OTEHR 'MATCH' DIRECTIVES.
+
+        root * /path/to/web_root
+        file_server
+
+# ERROR HANDLING SECTION.
+
+        handle_errors {
+                rewrite * /custom_{http.error.status_code}.html
+                file_server
+        }
+}
