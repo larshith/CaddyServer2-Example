@@ -1,3 +1,2 @@
 # CaddyServer2-Example
-
-Simple Caddy Server v2.0 configuration file "CaddyFile" for instant web content over HTTPS.
+Caddy Server v2.0 Simple configuration file "CaddyFile" for instant web content over HTTPS.
